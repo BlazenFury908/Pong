@@ -94,7 +94,7 @@ def main():
         display.blit((font.render(str(score_r), True, (255, 255, 255))), (620 - 125, 480 / 2 - 100))
 
         # Paints textures
-        display.blit(separator_texture, (640 / 2 - 8, 0))
+        display.blit(separator_texture, (640 / 2 - 4, 0))
 
         display.blit(ball_texture, (ball_x, ball_y))
 
