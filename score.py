@@ -1,4 +1,5 @@
 import pygame
+from math import floor, ceil
 
 
 class Score:
@@ -12,11 +13,11 @@ class Score:
         self.score_r = 0
 
     def update(self, game):
-        if (game.ball.x < 8) | (game.ball.x > 640 - 8):
-            if game.ball.x < 8:
-                self.score_l += + 1
-            if game.ball.x > 640 - 8:
-                self.score_r += + 1
+        if ceil(game.ball.x) < 16:
+            self.score_r += + 1
+            game.reset()
+        if floor(game.ball.x) > 640 - 16:
+            self.score_l += + 1
             game.reset()
 
         self.display.blit((self.font.render(str(self.score_l), True, (255, 255, 255))), (125, 480 / 2 - 100))

@@ -12,7 +12,7 @@ class Opponent:
         self.y = 0
 
     def update(self, ball_y):
-        threshold = random.randint(32, 64)
+        threshold = random.randint(32, 48)
 
         if ball_y < self.y - threshold:
             self.y -= 0.1

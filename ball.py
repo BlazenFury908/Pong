@@ -30,9 +30,9 @@ class Ball:
         if (self.y >= 480 - 16) | (self.y <= 0):
             self.y_velocity = -self.y_velocity
 
-        if (self.x >= 640 - 32) & ((self.y >= opponent_y) & (self.y <= opponent_y + 64)):
+        if (self.x > 640 - 32) & ((self.y >= opponent_y) & (self.y <= opponent_y + 64)):
             self.x_velocity = -self.x_velocity
-        if (self.x <= 16) & ((self.y >= player_y) & (self.y <= player_y + 64)):
+        if (self.x < 16) & ((self.y >= player_y) & (self.y <= player_y + 64)):
             self.x_velocity = -self.x_velocity
 
         self.x += self.x_velocity
